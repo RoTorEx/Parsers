@@ -4,8 +4,19 @@ import requests
 
 url = "https://news.ycombinator.com/newest"
 
-request = requests.get(url)
+# Получаем искомую страницу. Код 200 - успешное получение
+response = requests.get(url)
 
-soup = BeautifulSoup(request.text, "html.parser")
+# Получаем код всей html страницы
+soup = BeautifulSoup(response.text, "html.parser")
+# print(soup)
 
-print(soup)
+# Находим все теги с нужным классом на странице
+temes = soup.find_all("td", class_="title")
+
+for teme in temes:  # Циклом идём по всем тегам поочерёдно из temes
+    teme = temes.find("a", {'class': 'titlelink'})  #
+    # print(teme)
+
+    # Создадим условие, где
+
