@@ -2,14 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 
 
-# # Блок запроса у пользователя количества страниц для парсеринга
-# num_of_pages = input("Enter number of pages: ")
-# if num_of_pages.isdigit():
-#     num_of_pages = int(num_of_pages)
-# else:
-#     num_of_pages = True
-
-
 def parser():
     x = 0  # Счётчик страниц
     next = ''  # Чтобы flake8 не ругался
@@ -29,7 +21,7 @@ def parser():
         for topic in themes:  # Циклом идём по всем тегам поочерёдно из temes
             topic = topic.find("a", {'class': 'titlelink'})
             # Условимся двигатся дальше без None и зададимся конккретным параметром, который мы ищем (github.com)
-            if topic is not None and 'github.com' in str(topic):
+            if topic is not None:  # and 'github.com' in str(topic):
                 # Переменная, которая будет хранить ссылки
                 sublink = topic.get('href')
                 output = str(topic.text) + " --> " + str(sublink)  # Склеили теми и ссылку
