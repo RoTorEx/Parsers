@@ -91,9 +91,9 @@ def habr_parser(cnt, circs, file_write):
 # Начальный номер страницы
 page_counter = 1
 # Поиск по уловиям работы
-circs = ('Минск', 'Можно удаленно')
+circs = ('Минск', )
 # Нужна ли запись вакансий в отдельный файл. True - запись в файл, False - вывод в Terminal
-file_write = True
+file_write = False
 
 
 try:

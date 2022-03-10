@@ -1,3 +1,1 @@
-# Career.habr parser
-
-Простой парсер для поиска работы на career.habr.com
+# parser on habr.career
